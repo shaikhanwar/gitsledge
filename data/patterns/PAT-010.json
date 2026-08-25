@@ -1,0 +1,24 @@
+{
+    "id":  "PAT-010",
+    "name":  "Multi-Agent Content Generation",
+    "summary":  "An AI-powered multi-agent, multi-modal accelerator that transforms creative briefs into fast, on-brand marketing copy and visuals - reducing manual work and accelerating campaign creation.",
+    "repeatability":  "High",
+    "solutionPlay":  "",
+    "components":  [
+                       "Foundry IQ",
+                       "Azure OpenAI Service",
+                       "Agent Framework",
+                       "Azure Cosmos DB",
+                       "Microsoft Foundry",
+                       "Azure Container Apps"
+                   ],
+    "acceleratorIds":  [
+                           "ACC-010"
+                       ],
+    "recordStatus":  "Active",
+    "approvalStatus":  "Approved",
+    "createdBy":  "Imported (accelerators.ms)",
+    "createdAt":  "2026-08-25T16:16:06.0076440-04:00",
+    "modifiedBy":  "Imported (accelerators.ms)",
+    "modifiedAt":  "2026-08-25T16:16:06.0076440-04:00"
+}

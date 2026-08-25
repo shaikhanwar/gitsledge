@@ -1,20 +1,24 @@
 {
     "id":  "PAT-007",
-    "name":  "Operational workflow automation agents",
-    "summary":  "AI agents that modernize procurement, inspections, identity/access and IT workflows across agencies (e.g., NYC Buildings, Sanitation, FDNY, Health, Housing, OMB). Aligns to initial Agent Factory use cases.",
-    "repeatability":  "Medium",
-    "solutionPlay":  "Modernize Government Operations",
+    "name":  "Chat with your data",
+    "summary":  "Create a conversational AI chat experience to extract key information, summarize content and provide relevant insights from your unstructured data.",
+    "repeatability":  "High",
+    "solutionPlay":  "",
     "components":  [
-                       "Azure AI Foundry Agent Service",
-                       "Power Automate",
-                       "Azure Logic Apps",
-                       "Dataverse"
+                       "Azure AI Foundry Models",
+                       "Azure AI Search",
+                       "Azure Cosmos DB",
+                       "Azure PostgreSQL",
+                       "Azure Container Apps",
+                       "Azure Functions"
                    ],
     "acceleratorIds":  [
-                           "ACC-009"
+                           "ACC-007"
                        ],
-    "createdBy":  "Imported (FY26 CAF deck)",
-    "createdAt":  "2026-07-07T00:00:00.000Z",
-    "modifiedBy":  "Imported (FY26 CAF deck)",
-    "modifiedAt":  "2026-07-07T00:00:00.000Z"
+    "recordStatus":  "Active",
+    "approvalStatus":  "Approved",
+    "createdBy":  "Imported (accelerators.ms)",
+    "createdAt":  "2026-08-25T16:16:06.0076440-04:00",
+    "modifiedBy":  "Imported (accelerators.ms)",
+    "modifiedAt":  "2026-08-25T16:16:06.0076440-04:00"
 }

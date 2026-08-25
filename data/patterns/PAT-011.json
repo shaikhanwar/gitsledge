@@ -1,0 +1,23 @@
+{
+    "id":  "PAT-011",
+    "name":  "Data \u0026 Agent Governance and Security",
+    "summary":  "Confidently adopt AI by automating Microsoft Purview and compliance guardrails - capturing prompts and responses, enforcing data protection policies and streamlining governance across Copilot, Foundry, Fabric and custom AI agents.",
+    "repeatability":  "High",
+    "solutionPlay":  "",
+    "components":  [
+                       "Purview",
+                       "OneLake",
+                       "Microsoft Fabric",
+                       "Data Security Posture Management for AI",
+                       "Defender for AI"
+                   ],
+    "acceleratorIds":  [
+                           "ACC-011"
+                       ],
+    "recordStatus":  "Active",
+    "approvalStatus":  "Approved",
+    "createdBy":  "Imported (accelerators.ms)",
+    "createdAt":  "2026-08-25T16:16:06.0076440-04:00",
+    "modifiedBy":  "Imported (accelerators.ms)",
+    "modifiedAt":  "2026-08-25T16:16:06.0076440-04:00"
+}

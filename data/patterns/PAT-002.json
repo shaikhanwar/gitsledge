@@ -1,19 +1,22 @@
 {
     "id":  "PAT-002",
-    "name":  "Real-time event summarization",
-    "summary":  "Stream transcription and summarization of live audio/text with structured output for downstream systems.",
-    "repeatability":  "Medium",
-    "solutionPlay":  "Public Safety \u0026 Justice Modernization",
+    "name":  "Content Processing",
+    "summary":  "Process claims, invoices, contracts and other documents quickly and accurately by extracting information from unstructured content (text, images, tables, graphs) and mapping it to a structured format.",
+    "repeatability":  "High",
+    "solutionPlay":  "",
     "components":  [
-                       "Azure AI Speech",
-                       "Azure OpenAI",
-                       "Event Hubs"
+                       "Azure AI Foundry Models",
+                       "Azure AI Content Understanding",
+                       "Azure Cosmos DB",
+                       "Azure Container Apps"
                    ],
     "acceleratorIds":  [
                            "ACC-002"
                        ],
-    "createdBy":  "Seed",
-    "createdAt":  "2026-05-02T12:00:00.000Z",
-    "modifiedBy":  "Seed",
-    "modifiedAt":  "2026-05-02T12:00:00.000Z"
+    "recordStatus":  "Active",
+    "approvalStatus":  "Approved",
+    "createdBy":  "Imported (accelerators.ms)",
+    "createdAt":  "2026-08-25T16:16:06.0076440-04:00",
+    "modifiedBy":  "Imported (accelerators.ms)",
+    "modifiedAt":  "2026-08-25T16:16:06.0076440-04:00"
 }

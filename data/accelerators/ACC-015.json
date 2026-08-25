@@ -1,0 +1,13 @@
+{
+    "id":  "ACC-015",
+    "name":  "Deploy Your AI Application in Production",
+    "type":  "Solution accelerator",
+    "patternId":  "PAT-015",
+    "url":  "https://github.com/microsoft/deploy-your-ai-application-in-production",
+    "recordStatus":  "Active",
+    "approvalStatus":  "Approved",
+    "createdBy":  "Imported (accelerators.ms)",
+    "createdAt":  "2026-08-25T16:16:06.0076440-04:00",
+    "modifiedBy":  "Imported (accelerators.ms)",
+    "modifiedAt":  "2026-08-25T16:16:06.0076440-04:00"
+}

@@ -1,0 +1,22 @@
+{
+    "id":  "PAT-008",
+    "name":  "Container-Migration",
+    "summary":  "Leverage AI to streamline container platform migration by automating tasks, empowering organizations to focus on high-value work.",
+    "repeatability":  "High",
+    "solutionPlay":  "",
+    "components":  [
+                       "Azure AI Services",
+                       "Azure Cosmos DB",
+                       "Azure Container Apps",
+                       "Azure Configuration Service"
+                   ],
+    "acceleratorIds":  [
+                           "ACC-008"
+                       ],
+    "recordStatus":  "Active",
+    "approvalStatus":  "Approved",
+    "createdBy":  "Imported (accelerators.ms)",
+    "createdAt":  "2026-08-25T16:16:06.0076440-04:00",
+    "modifiedBy":  "Imported (accelerators.ms)",
+    "modifiedAt":  "2026-08-25T16:16:06.0076440-04:00"
+}

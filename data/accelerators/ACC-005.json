@@ -1,7 +1,13 @@
 {
     "id":  "ACC-005",
-    "name":  "Azure Landing Zone (ALZ) for data platforms",
+    "name":  "Modernize your Code",
     "type":  "Solution accelerator",
-    "patternId":  "PAT-004",
-    "url":  "https://contoso.example/accelerators/alz-data"
+    "patternId":  "PAT-005",
+    "url":  "https://aka.ms/CSAGoldStandards/ModernizeCode",
+    "recordStatus":  "Active",
+    "approvalStatus":  "Approved",
+    "createdBy":  "Imported (accelerators.ms)",
+    "createdAt":  "2026-08-25T16:16:06.0076440-04:00",
+    "modifiedBy":  "Imported (accelerators.ms)",
+    "modifiedAt":  "2026-08-25T16:16:06.0076440-04:00"
 }

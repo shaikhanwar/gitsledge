@@ -1,7 +1,13 @@
 {
     "id":  "ACC-001",
-    "name":  "RAG starter (Bicep + app)",
-    "type":  "Repo template",
+    "name":  "Multi-Agent Custom Automation Engine",
+    "type":  "Solution accelerator",
     "patternId":  "PAT-001",
-    "url":  "https://contoso.example/accelerators/rag-starter"
+    "url":  "https://aka.ms/CSAGoldStandards/MultiAgent",
+    "recordStatus":  "Active",
+    "approvalStatus":  "Approved",
+    "createdBy":  "Imported (accelerators.ms)",
+    "createdAt":  "2026-08-25T16:16:06.0076440-04:00",
+    "modifiedBy":  "Imported (accelerators.ms)",
+    "modifiedAt":  "2026-08-25T16:16:06.0076440-04:00"
 }

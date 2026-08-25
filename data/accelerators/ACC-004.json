@@ -1,7 +1,13 @@
 {
     "id":  "ACC-004",
-    "name":  "GitHub Copilot app-modernization playbook",
-    "type":  "Repo template",
-    "patternId":  "PAT-003",
-    "url":  "https://contoso.example/accelerators/copilot-appmod-playbook"
+    "name":  "Customer Chatbot",
+    "type":  "Solution accelerator",
+    "patternId":  "PAT-004",
+    "url":  "https://aka.ms/CSAGoldStandards/CustomerChatbot",
+    "recordStatus":  "Active",
+    "approvalStatus":  "Approved",
+    "createdBy":  "Imported (accelerators.ms)",
+    "createdAt":  "2026-08-25T16:16:06.0076440-04:00",
+    "modifiedBy":  "Imported (accelerators.ms)",
+    "modifiedAt":  "2026-08-25T16:16:06.0076440-04:00"
 }

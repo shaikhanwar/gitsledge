@@ -1,7 +1,13 @@
 {
     "id":  "ACC-006",
-    "name":  "Database migration assessment kit (DMA + SQL)",
-    "type":  "Documentation",
-    "patternId":  "PAT-004",
-    "url":  "https://contoso.example/accelerators/db-migration-assessment"
+    "name":  "Document Knowledge Mining",
+    "type":  "Solution accelerator",
+    "patternId":  "PAT-006",
+    "url":  "https://aka.ms/CSAGoldStandards/DocumentKnowledgeMining",
+    "recordStatus":  "Active",
+    "approvalStatus":  "Approved",
+    "createdBy":  "Imported (accelerators.ms)",
+    "createdAt":  "2026-08-25T16:16:06.0076440-04:00",
+    "modifiedBy":  "Imported (accelerators.ms)",
+    "modifiedAt":  "2026-08-25T16:16:06.0076440-04:00"
 }

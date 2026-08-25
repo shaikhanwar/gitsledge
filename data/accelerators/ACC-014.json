@@ -1,0 +1,13 @@
+{
+    "id":  "ACC-014",
+    "name":  "Unified Data Foundation with Fabric",
+    "type":  "Solution accelerator",
+    "patternId":  "PAT-014",
+    "url":  "https://aka.ms/UnifiedData",
+    "recordStatus":  "Active",
+    "approvalStatus":  "Approved",
+    "createdBy":  "Imported (accelerators.ms)",
+    "createdAt":  "2026-08-25T16:16:06.0076440-04:00",
+    "modifiedBy":  "Imported (accelerators.ms)",
+    "modifiedAt":  "2026-08-25T16:16:06.0076440-04:00"
+}

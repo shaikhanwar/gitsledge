@@ -1,7 +1,13 @@
 {
     "id":  "ACC-008",
-    "name":  "NL dashboard sample (Fabric + Copilot)",
-    "type":  "Sample app",
-    "patternId":  "PAT-006",
-    "url":  "https://contoso.example/accelerators/nl-dashboard-fabric"
+    "name":  "Container-Migration",
+    "type":  "Solution accelerator",
+    "patternId":  "PAT-008",
+    "url":  "https://github.com/microsoft/Container-Migration-Solution-Accelerator",
+    "recordStatus":  "Active",
+    "approvalStatus":  "Approved",
+    "createdBy":  "Imported (accelerators.ms)",
+    "createdAt":  "2026-08-25T16:16:06.0076440-04:00",
+    "modifiedBy":  "Imported (accelerators.ms)",
+    "modifiedAt":  "2026-08-25T16:16:06.0076440-04:00"
 }

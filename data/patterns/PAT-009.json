@@ -1,0 +1,24 @@
+{
+    "id":  "PAT-009",
+    "name":  "Microsoft IQ",
+    "summary":  "A shared intelligence layer that unifies data, knowledge and workflows, enabling AI-powered insights and coordinated actions for measurable business outcomes.",
+    "repeatability":  "High",
+    "solutionPlay":  "",
+    "components":  [
+                       "Microsoft Foundry",
+                       "Microsoft Agent Framework",
+                       "Foundry IQ",
+                       "Work IQ",
+                       "Microsoft Fabric",
+                       "Fabric IQ"
+                   ],
+    "acceleratorIds":  [
+                           "ACC-009"
+                       ],
+    "recordStatus":  "Active",
+    "approvalStatus":  "Approved",
+    "createdBy":  "Imported (accelerators.ms)",
+    "createdAt":  "2026-08-25T16:16:06.0076440-04:00",
+    "modifiedBy":  "Imported (accelerators.ms)",
+    "modifiedAt":  "2026-08-25T16:16:06.0076440-04:00"
+}

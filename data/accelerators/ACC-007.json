@@ -1,7 +1,13 @@
 {
     "id":  "ACC-007",
-    "name":  "Citizen chatbot starter (Bot + RAG)",
-    "type":  "Sample app",
-    "patternId":  "PAT-005",
-    "url":  "https://contoso.example/accelerators/citizen-chatbot-starter"
+    "name":  "Chat with your data",
+    "type":  "Solution accelerator",
+    "patternId":  "PAT-007",
+    "url":  "https://aka.ms/CSAGoldStandards/ChatWithYourData",
+    "recordStatus":  "Active",
+    "approvalStatus":  "Approved",
+    "createdBy":  "Imported (accelerators.ms)",
+    "createdAt":  "2026-08-25T16:16:06.0076440-04:00",
+    "modifiedBy":  "Imported (accelerators.ms)",
+    "modifiedAt":  "2026-08-25T16:16:06.0076440-04:00"
 }

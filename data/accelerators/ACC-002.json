@@ -1,7 +1,13 @@
 {
     "id":  "ACC-002",
-    "name":  "Streaming summarizer sample",
-    "type":  "Sample app",
+    "name":  "Content Processing",
+    "type":  "Solution accelerator",
     "patternId":  "PAT-002",
-    "url":  "https://contoso.example/accelerators/stream-summarizer"
+    "url":  "https://aka.ms/CSAGoldStandards/ContentProcessing",
+    "recordStatus":  "Active",
+    "approvalStatus":  "Approved",
+    "createdBy":  "Imported (accelerators.ms)",
+    "createdAt":  "2026-08-25T16:16:06.0076440-04:00",
+    "modifiedBy":  "Imported (accelerators.ms)",
+    "modifiedAt":  "2026-08-25T16:16:06.0076440-04:00"
 }

@@ -1,7 +1,13 @@
 {
     "id":  "ACC-009",
-    "name":  "Government workflow agent templates",
-    "type":  "Flow template",
-    "patternId":  "PAT-007",
-    "url":  "https://contoso.example/accelerators/gov-workflow-agents"
+    "name":  "Microsoft IQ",
+    "type":  "Solution accelerator",
+    "patternId":  "PAT-009",
+    "url":  "https://aka.ms/MSIQ",
+    "recordStatus":  "Active",
+    "approvalStatus":  "Approved",
+    "createdBy":  "Imported (accelerators.ms)",
+    "createdAt":  "2026-08-25T16:16:06.0076440-04:00",
+    "modifiedBy":  "Imported (accelerators.ms)",
+    "modifiedAt":  "2026-08-25T16:16:06.0076440-04:00"
 }

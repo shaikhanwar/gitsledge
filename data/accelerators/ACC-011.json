@@ -1,0 +1,13 @@
+{
+    "id":  "ACC-011",
+    "name":  "Data \u0026 Agent Governance and Security",
+    "type":  "Solution accelerator",
+    "patternId":  "PAT-011",
+    "url":  "https://aka.ms/DAGSA",
+    "recordStatus":  "Active",
+    "approvalStatus":  "Approved",
+    "createdBy":  "Imported (accelerators.ms)",
+    "createdAt":  "2026-08-25T16:16:06.0076440-04:00",
+    "modifiedBy":  "Imported (accelerators.ms)",
+    "modifiedAt":  "2026-08-25T16:16:06.0076440-04:00"
+}

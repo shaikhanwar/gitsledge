@@ -1,0 +1,13 @@
+{
+    "id":  "ACC-010",
+    "name":  "Multi-Agent Content Generation",
+    "type":  "Solution accelerator",
+    "patternId":  "PAT-010",
+    "url":  "https://aka.ms/ContentGeneration",
+    "recordStatus":  "Active",
+    "approvalStatus":  "Approved",
+    "createdBy":  "Imported (accelerators.ms)",
+    "createdAt":  "2026-08-25T16:16:06.0076440-04:00",
+    "modifiedBy":  "Imported (accelerators.ms)",
+    "modifiedAt":  "2026-08-25T16:16:06.0076440-04:00"
+}

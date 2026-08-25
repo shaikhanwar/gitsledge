@@ -1,20 +1,23 @@
 {
     "id":  "PAT-005",
-    "name":  "Constituent virtual assistant (chatbot + voice)",
-    "summary":  "Public chatbots, voice assistants and guidance tools that reduce call volume and improve service delivery for residents and frontline staff, grounded on agency content. Proven in the NYC AI Hackathon scalable outcomes.",
+    "name":  "Modernize your Code",
+    "summary":  "Migrate legacy code to modern languages by leveraging a team of AI agents.",
     "repeatability":  "High",
-    "solutionPlay":  "Citizen \u0026 Constituent Engagement",
+    "solutionPlay":  "",
     "components":  [
-                       "Azure AI Foundry",
-                       "Azure OpenAI",
-                       "Azure AI Bot Service",
-                       "Azure AI Speech"
+                       "Azure AI Foundry Models",
+                       "Azure AI Foundry Agent Service",
+                       "Semantic Kernel",
+                       "Azure Container Apps",
+                       "Azure Cosmos DB"
                    ],
     "acceleratorIds":  [
-                           "ACC-007"
+                           "ACC-005"
                        ],
-    "createdBy":  "Imported (FY26 CAF deck)",
-    "createdAt":  "2026-07-07T00:00:00.000Z",
-    "modifiedBy":  "Imported (FY26 CAF deck)",
-    "modifiedAt":  "2026-07-07T00:00:00.000Z"
+    "recordStatus":  "Active",
+    "approvalStatus":  "Approved",
+    "createdBy":  "Imported (accelerators.ms)",
+    "createdAt":  "2026-08-25T16:16:06.0076440-04:00",
+    "modifiedBy":  "Imported (accelerators.ms)",
+    "modifiedAt":  "2026-08-25T16:16:06.0076440-04:00"
 }

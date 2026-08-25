@@ -1,0 +1,24 @@
+{
+    "id":  "PAT-012",
+    "name":  "Real-Time Intelligence for Operations",
+    "summary":  "Harness Real-Time Intelligence on the unified data foundation with Microsoft Fabric to minimize downtime, maximize asset productivity and optimize operations.",
+    "repeatability":  "High",
+    "solutionPlay":  "",
+    "components":  [
+                       "Microsoft Fabric",
+                       "OneLake",
+                       "Real-Time Intelligence",
+                       "Fabric Data Agent",
+                       "Eventstream",
+                       "Eventhouse"
+                   ],
+    "acceleratorIds":  [
+                           "ACC-012"
+                       ],
+    "recordStatus":  "Active",
+    "approvalStatus":  "Approved",
+    "createdBy":  "Imported (accelerators.ms)",
+    "createdAt":  "2026-08-25T16:16:06.0076440-04:00",
+    "modifiedBy":  "Imported (accelerators.ms)",
+    "modifiedAt":  "2026-08-25T16:16:06.0076440-04:00"
+}

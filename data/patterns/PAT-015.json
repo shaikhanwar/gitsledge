@@ -1,0 +1,22 @@
+{
+    "id":  "PAT-015",
+    "name":  "Deploy Your AI Application in Production",
+    "summary":  "Create a secure, extensible and integrated environment for deploying and running AI Foundry workloads in production.",
+    "repeatability":  "High",
+    "solutionPlay":  "",
+    "components":  [
+                       "Azure AI Foundry Models",
+                       "Azure AI Search",
+                       "Azure Cosmos DB",
+                       "Azure Container Apps"
+                   ],
+    "acceleratorIds":  [
+                           "ACC-015"
+                       ],
+    "recordStatus":  "Active",
+    "approvalStatus":  "Approved",
+    "createdBy":  "Imported (accelerators.ms)",
+    "createdAt":  "2026-08-25T16:16:06.0076440-04:00",
+    "modifiedBy":  "Imported (accelerators.ms)",
+    "modifiedAt":  "2026-08-25T16:16:06.0076440-04:00"
+}

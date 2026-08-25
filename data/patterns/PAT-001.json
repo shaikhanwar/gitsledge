@@ -1,19 +1,24 @@
 {
     "id":  "PAT-001",
-    "name":  "Document-grounded Copilot (RAG)",
-    "summary":  "Retrieval-augmented assistant over an agency\u0027s document corpus with citations and access trimming.",
+    "name":  "Multi-Agent Custom Automation Engine",
+    "summary":  "Orchestrate and manage a group of AI agents to plan and automate work, with use cases spanning employee on-boarding, product marketing, customer retail remediation, RFP review and contract compliance review.",
     "repeatability":  "High",
-    "solutionPlay":  "Data \u0026 AI for Public Sector",
+    "solutionPlay":  "",
     "components":  [
-                       "Azure OpenAI",
-                       "Azure AI Search",
-                       "Entra ID"
+                       "Azure AI Foundry Models",
+                       "Azure AI Foundry Agent Service",
+                       "Agent Framework",
+                       "Azure Container Apps",
+                       "Azure Cosmos DB",
+                       "Foundry IQ"
                    ],
     "acceleratorIds":  [
                            "ACC-001"
                        ],
-    "createdBy":  "Seed",
-    "createdAt":  "2026-05-02T12:00:00.000Z",
-    "modifiedBy":  "Seed",
-    "modifiedAt":  "2026-05-02T12:00:00.000Z"
+    "recordStatus":  "Active",
+    "approvalStatus":  "Approved",
+    "createdBy":  "Imported (accelerators.ms)",
+    "createdAt":  "2026-08-25T16:16:06.0076440-04:00",
+    "modifiedBy":  "Imported (accelerators.ms)",
+    "modifiedAt":  "2026-08-25T16:16:06.0076440-04:00"
 }

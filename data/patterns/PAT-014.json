@@ -1,0 +1,24 @@
+{
+    "id":  "PAT-014",
+    "name":  "Unified Data Foundation with Fabric",
+    "summary":  "Establish a unified data foundation in Fabric to accelerate decisions and insights using Fabric Data Agents, Copilot and governance on a secure, scalable architecture.",
+    "repeatability":  "High",
+    "solutionPlay":  "",
+    "components":  [
+                       "Microsoft Fabric",
+                       "OneLake",
+                       "Fabric Data Agent",
+                       "Azure Databricks",
+                       "Purview",
+                       "Copilot for Power BI"
+                   ],
+    "acceleratorIds":  [
+                           "ACC-014"
+                       ],
+    "recordStatus":  "Active",
+    "approvalStatus":  "Approved",
+    "createdBy":  "Imported (accelerators.ms)",
+    "createdAt":  "2026-08-25T16:16:06.0076440-04:00",
+    "modifiedBy":  "Imported (accelerators.ms)",
+    "modifiedAt":  "2026-08-25T16:16:06.0076440-04:00"
+}

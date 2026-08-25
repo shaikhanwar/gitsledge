@@ -1,11 +1,12 @@
 {
     "id":  "VER-001",
-    "name":  "State Agency",
+    "name":  "Boards \u0026 Commissions",
     "industryId":  "IND-001",
-    "description":  "Statewide executive agencies and departments.",
+    "description":  "",
+    "recordStatus":  "Active",
     "approvalStatus":  "Approved",
-    "createdBy":  "Seed",
-    "createdAt":  "2026-05-02T12:00:00.000Z",
-    "modifiedBy":  "Seed",
-    "modifiedAt":  "2026-05-02T12:00:00.000Z"
+    "createdBy":  "Imported (SLG Industry Explorer)",
+    "createdAt":  "2026-08-25T16:16:06.0076440-04:00",
+    "modifiedBy":  "Imported (SLG Industry Explorer)",
+    "modifiedAt":  "2026-08-25T16:16:06.0076440-04:00"
 }

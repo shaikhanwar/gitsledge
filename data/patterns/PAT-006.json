@@ -1,20 +1,21 @@
 {
     "id":  "PAT-006",
-    "name":  "Natural-language analytics over Microsoft Fabric",
-    "summary":  "Natural-language dashboards that give leadership real-time insight without business-analyst dependency, over a unified governed data estate. From the NYC Hackathon \u0027Instant Data Insight\u0027 outcome.",
-    "repeatability":  "Medium",
-    "solutionPlay":  "Power Business Decisions with Cloud Scale Analytics",
+    "name":  "Document Knowledge Mining",
+    "summary":  "Ingest, extract and classify content from a high volume of assets to gain deeper insights and generate relevant suggestions for quick and easy review.",
+    "repeatability":  "High",
+    "solutionPlay":  "",
     "components":  [
-                       "Microsoft Fabric",
-                       "Power BI",
-                       "Copilot for Power BI",
-                       "Azure OpenAI"
+                       "Azure AI Foundry Models",
+                       "Azure AI Search",
+                       "Azure AI Document Intelligence"
                    ],
     "acceleratorIds":  [
-                           "ACC-008"
+                           "ACC-006"
                        ],
-    "createdBy":  "Imported (FY26 CAF deck)",
-    "createdAt":  "2026-07-07T00:00:00.000Z",
-    "modifiedBy":  "Imported (FY26 CAF deck)",
-    "modifiedAt":  "2026-07-07T00:00:00.000Z"
+    "recordStatus":  "Active",
+    "approvalStatus":  "Approved",
+    "createdBy":  "Imported (accelerators.ms)",
+    "createdAt":  "2026-08-25T16:16:06.0076440-04:00",
+    "modifiedBy":  "Imported (accelerators.ms)",
+    "modifiedAt":  "2026-08-25T16:16:06.0076440-04:00"
 }

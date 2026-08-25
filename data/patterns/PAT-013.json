@@ -1,0 +1,23 @@
+{
+    "id":  "PAT-013",
+    "name":  "Agentic Applications for Unified Data Foundation",
+    "summary":  "Accelerate decision making at scale with secure, agentic AI built on a unified data foundation, with two use cases for sales performance and customer insights.",
+    "repeatability":  "High",
+    "solutionPlay":  "",
+    "components":  [
+                       "Microsoft Fabric",
+                       "SQL DB in Fabric",
+                       "Microsoft Foundry",
+                       "Microsoft Agent Framework",
+                       "Azure App Service"
+                   ],
+    "acceleratorIds":  [
+                           "ACC-013"
+                       ],
+    "recordStatus":  "Active",
+    "approvalStatus":  "Approved",
+    "createdBy":  "Imported (accelerators.ms)",
+    "createdAt":  "2026-08-25T16:16:06.0076440-04:00",
+    "modifiedBy":  "Imported (accelerators.ms)",
+    "modifiedAt":  "2026-08-25T16:16:06.0076440-04:00"
+}

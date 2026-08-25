@@ -1,0 +1,13 @@
+{
+    "id":  "ACC-012",
+    "name":  "Real-Time Intelligence for Operations",
+    "type":  "Solution accelerator",
+    "patternId":  "PAT-012",
+    "url":  "https://aka.ms/RTIOps",
+    "recordStatus":  "Active",
+    "approvalStatus":  "Approved",
+    "createdBy":  "Imported (accelerators.ms)",
+    "createdAt":  "2026-08-25T16:16:06.0076440-04:00",
+    "modifiedBy":  "Imported (accelerators.ms)",
+    "modifiedAt":  "2026-08-25T16:16:06.0076440-04:00"
+}
