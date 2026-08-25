@@ -110,6 +110,36 @@ export function ghNextId(existingIds, prefix) {
   return `${prefix}-${String(max + 1).padStart(3, '0')}`;
 }
 
+// ---- Option A+ : pre-filled GitHub issue (no backend) ---------------------
+// Builds the "### Label\n\nvalue" body the issue parser expects, then opens the
+// New Issue page pre-filled. The user reviews and clicks Submit; the workflow
+// turns it into a PR. Ref fields use display NAMES (record carries _industryName
+// / _verticalName) so the parser can resolve them to ids on the server.
+const ENTITY_TITLE = { usecase: 'Use case', industry: 'Industry', vertical: 'Vertical', solutionplay: 'Solution play', pattern: 'Pattern', event: 'Event' };
+const ISSUE_FIELDS = {
+  usecase: [['Use case title', 'title'], ['Industry', '_industryName'], ['Vertical', '_verticalName'], ['Status', 'status'], ['Business problem', 'businessProblem'], ['Current process', 'currentProcess'], ['Proposed solution', 'proposedSolution'], ['Beneficiaries', 'beneficiaries'], ['Tags', 'tags'], ['Components', 'components'], ['Copilot role', 'copilotRole'], ['Services', 'services'], ['Solution play', 'solutionPlay'], ['Business value', 'businessValue'], ['Estimated impact', 'estimatedImpact'], ['Owner name', 'ownerName'], ['Owner email', 'ownerEmail'], ['Reference URL', 'referenceUrl'], ['Repo URL', 'repoUrl']],
+  industry: [['Industry name', 'name'], ['Description', 'description']],
+  vertical: [['Vertical name', 'name'], ['Industry', '_industryName'], ['Description', 'description']],
+  solutionplay: [['Solution play name', 'name'], ['Description', 'description']],
+  pattern: [['Pattern name', 'name'], ['Summary', 'summary'], ['Repeatability', 'repeatability'], ['Solution play', 'solutionPlay'], ['Components', 'components']],
+  event: [['Event title', 'title'], ['Start date', 'startDate'], ['End date', 'endDate'], ['Status', 'status'], ['Format', 'format'], ['Location', 'location'], ['Themes', 'themes'], ['Organizers', 'organizers'], ['Registration URL', 'registrationUrl'], ['Notes', 'notes']]
+};
+
+export function ghPrefillIssue(entityKey, record) {
+  if (!REPO) return false;
+  const fields = ISSUE_FIELDS[entityKey] || [];
+  const lines = fields.map(([label, key]) => {
+    let v = record[key];
+    if (Array.isArray(v)) v = v.join(', ');
+    if (v == null || v === '' || v === '#') v = '_No response_';
+    return `### ${label}\n\n${v}`;
+  });
+  const title = `[${ENTITY_TITLE[entityKey] || entityKey}] ${record.title || record.name || ''}`.trim();
+  const url = `https://github.com/${REPO}/issues/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent(lines.join('\n\n'))}`;
+  window.open(url, '_blank', 'noopener');
+  return true;
+}
+
 const b64 = (str) => btoa(unescape(encodeURIComponent(str)));
 
 // Create a branch, commit the record file, and open a PR. Returns the PR URL.

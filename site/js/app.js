@@ -23,7 +23,7 @@ import {
   ACCELERATOR_TYPES, EVENT_STATUS, EVENT_FORMAT, STATUS_CLASS
 } from './constants.js';
 import {
-  ghConfigured, ghSignedIn, ghSignIn, ghSignOut, ghHandleRedirect, ghSubmit, ghNextId, ghCurrentUser
+  ghConfigured, ghSignedIn, ghSignIn, ghSignOut, ghHandleRedirect, ghSubmit, ghNextId, ghCurrentUser, ghPrefillIssue
 } from './github.js';
 
 const app = document.getElementById('app');
@@ -65,7 +65,9 @@ function showSaveError(err) {
 }
 onPersist((ok, err) => { if (ok) document.getElementById('saveError')?.remove(); else showSaveError(err); });
 
-const savedNote = () => isSharePointMode() ? 'Saved to SharePoint.' : 'Saved (demo — stored in this browser).';
+const savedNote = () => !GITHUB_REPO
+  ? (isSharePointMode() ? 'Saved to SharePoint.' : 'Saved (demo \u2014 stored in this browser).')
+  : (ghConfigured() ? 'On submit, a pull request opens for review.' : 'On submit, a pre-filled GitHub issue opens for review.');
 
 // ---- Choice / form helpers ------------------------------------------------
 const opts = (values, selected) => values.map(v =>
@@ -1420,21 +1422,31 @@ const REGISTER_TEMPLATES = {
 };
 let lastView = '#/home';
 
-// Option B (in-app write): assign a clean id, open a PR via the GitHub API, then
-// toast + navigate. If not signed in yet, kick off the one-time GitHub sign-in.
-// Returns true when it handled the submit (so callers skip the local path).
+// In-app register submit. With OAuth configured (Option B) it opens a PR via the
+// API after a one-time sign-in. Without OAuth it falls back to opening a
+// PRE-FILLED GitHub issue (Option A+): the branded form (with live cascading
+// dropdowns) collects the data; GitHub only hosts the final one-click submit.
 function ghRegister(entityKey, record, listHash, existingIds, prefix) {
-  if (!ghConfigured()) return false;
-  if (!ghSignedIn()) {
-    toast('Sign in with GitHub to submit for review…');
-    setTimeout(() => ghSignIn(location.hash), 400);
+  if (!GITHUB_REPO) return false;
+  record._industryName = industryName(record.industryId);
+  record._verticalName = verticalName(record.verticalId);
+  if (ghConfigured()) {
+    if (!ghSignedIn()) {
+      toast('Sign in with GitHub to submit for review…');
+      setTimeout(() => ghSignIn(location.hash), 400);
+      return true;
+    }
+    record.id = ghNextId(existingIds, prefix);
+    toast('Submitting to GitHub…');
+    ghSubmit(entityKey, record)
+      .then(() => { toast('Submitted for review. A pull request was opened.'); location.hash = listHash; })
+      .catch(err => { toast('Submit failed: ' + err.message); console.error(err); });
     return true;
   }
-  record.id = ghNextId(existingIds, prefix);
-  toast('Submitting to GitHub…');
-  ghSubmit(entityKey, record)
-    .then(() => { toast('Submitted for review. A pull request was opened.'); location.hash = listHash; })
-    .catch(err => { toast('Submit failed: ' + err.message); console.error(err); });
+  // Option A+ : open a pre-filled GitHub issue (no backend needed)
+  ghPrefillIssue(entityKey, record);
+  toast('Review the pre-filled issue on GitHub and click “Submit new issue” to send for approval.');
+  location.hash = listHash;
   return true;
 }
 
@@ -1444,15 +1456,6 @@ function route() {
   const base = parts[0] || 'home';
   const sub = parts[1] || '';
   const id = parts.slice(1).join('/');
-  // Intercept register/<entity> -> open the GitHub Issue Form in a new tab.
-  // Skipped when the in-app write path (OAuth) is configured; then we render the
-  // branded form instead and submit via the API (see ghRegister).
-  if (GITHUB_REPO && !ghConfigured() && base === 'register' && sub && REGISTER_TEMPLATES[sub]) {
-    window.open(`https://github.com/${GITHUB_REPO}/issues/new?template=${REGISTER_TEMPLATES[sub]}`, '_blank', 'noopener');
-    closeRegisterMenu();
-    if (location.hash !== lastView) location.hash = lastView; else mount((ROUTES[lastView.replace(/^#\//, '').split('/')[0]] || pageHome)());
-    return;
-  }
   let node;
   if (base === 'usecase') node = pageUseCase(id);
   else if (base === 'industry') node = pageIndustry(id);
