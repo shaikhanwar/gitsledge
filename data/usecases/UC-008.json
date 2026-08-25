@@ -1,0 +1,45 @@
+﻿{
+    "id":  "UC-008",
+    "title":  "Louisiana OTS â€” App-in-a-Day Azure App \u0026 Database Modernization",
+    "industryId":  "IND-001",
+    "verticalId":  "VER-001",
+    "status":  "Published",
+    "businessProblem":  "Louisiana Office of Technology Services (OTS) was stalled in cloud exploration, with Azure in an AWS bake-off and no clear action plan.",
+    "currentProcess":  "Exploratory platform evaluation without hands-on Azure validation.",
+    "proposedSolution":  "An App-in-a-Day validated Azure app-dev, database, and GitHub Copilot through hands-on scenarios â€” moving OTS from exploration to active Azure evaluation and reopening the platform decision.",
+    "beneficiaries":  "Louisiana OTS developers and architects, state agency stakeholders",
+    "tags":  [
+                 "Copilot",
+                 "Cloud Migration",
+                 "Cost Savings"
+             ],
+    "components":  [
+                       "Azure App Service",
+                       "Azure PaaS Databases",
+                       "GitHub Copilot"
+                   ],
+    "copilotRole":  "Hands-on app modernization accelerator",
+    "services":  [
+                     "Azure App Service",
+                     "Azure Database",
+                     "GitHub Copilot"
+                 ],
+    "solutionPlay":  "Modernize Government Operations",
+    "patternId":  "PAT-003",
+    "dataDependencies":  "State application and database estate",
+    "compliance":  "State data governance policies.",
+    "risks":  "Competitive displacement in the AWS bake-off.",
+    "businessValue":  "Positioned Azure in the AWS bake-off and converted technical discovery into a scoped action plan with an updated cost view.",
+    "estimatedImpact":  "Exploration to active Azure evaluation",
+    "impactMetric":  "Platform decision progression",
+    "feasibility":  "High",
+    "reusability":  "High across state agencies evaluating cloud platforms.",
+    "ownerName":  "Priya Nair",
+    "ownerEmail":  "priya.nair@contoso.com",
+    "referenceUrl":  "https://contoso.example/refarch/la-ots-appinaday",
+    "repoUrl":  "https://contoso.example/repos/la-ots-appinaday",
+    "createdBy":  "CAF FY26 deck",
+    "createdAt":  "2026-06-20T12:00:00.000Z",
+    "modifiedBy":  "CAF FY26 deck",
+    "modifiedAt":  "2026-06-20T12:00:00.000Z"
+}

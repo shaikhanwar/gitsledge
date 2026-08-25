@@ -1,0 +1,7 @@
+﻿{
+    "id":  "ACC-007",
+    "name":  "Citizen chatbot starter (Bot + RAG)",
+    "type":  "Sample app",
+    "patternId":  "PAT-005",
+    "url":  "https://contoso.example/accelerators/citizen-chatbot-starter"
+}

@@ -1,0 +1,14 @@
+# CODEOWNERS — every change to catalog data or the site requires review by the
+# SLED Approvers team before it can merge (branch protection must have
+# "Require review from Code Owners" enabled). This IS the approval gate.
+#
+# Personal DEV repo: the owner is the sole approver. In the org PROD repo,
+# replace @shaikhanwar with the real team slug, e.g. @your-org/sled-approvers.
+
+# All catalog records
+/data/                 @shaikhanwar
+
+# The site + automation (protect the app and the pipeline)
+/site/                 @shaikhanwar
+/scripts/              @shaikhanwar
+/.github/              @shaikhanwar

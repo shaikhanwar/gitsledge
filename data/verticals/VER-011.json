@@ -1,0 +1,11 @@
+﻿{
+    "id":  "VER-011",
+    "name":  "Higher Education",
+    "industryId":  "IND-005",
+    "description":  "Colleges, universities, and research institutions.",
+    "approvalStatus":  "Approved",
+    "createdBy":  "Seed",
+    "createdAt":  "2026-05-02T12:00:00.000Z",
+    "modifiedBy":  "Seed",
+    "modifiedAt":  "2026-05-02T12:00:00.000Z"
+}

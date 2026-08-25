@@ -1,0 +1,45 @@
+﻿{
+    "id":  "UC-013",
+    "title":  "Natural-Language Leadership Dashboards (NYC)",
+    "industryId":  "IND-001",
+    "verticalId":  "VER-002",
+    "status":  "Published",
+    "businessProblem":  "Leaders depended on business analysts to answer data questions, delaying real-time insight.",
+    "currentProcess":  "Static reports and analyst-built dashboards with turnaround delays.",
+    "proposedSolution":  "Natural-language dashboards enable real-time leadership insights without business-analyst dependency.",
+    "beneficiaries":  "NYC agency leadership and decision-makers",
+    "tags":  [
+                 "AI",
+                 "Data \u0026 Analytics",
+                 "Copilot"
+             ],
+    "components":  [
+                       "Microsoft Fabric",
+                       "Power BI",
+                       "Azure OpenAI"
+                   ],
+    "copilotRole":  "Natural-language data query and insight",
+    "services":  [
+                     "Microsoft Fabric",
+                     "Power BI",
+                     "Azure OpenAI"
+                 ],
+    "solutionPlay":  "Power Business Decisions with Cloud Scale Analytics",
+    "patternId":  "PAT-006",
+    "dataDependencies":  "Governed agency data estate",
+    "compliance":  "Role-based access to governed data.",
+    "risks":  "Data quality and governance across sources.",
+    "businessValue":  "Real-time, self-service leadership insight without analyst dependency.",
+    "estimatedImpact":  "Real-time insight without analyst backlog",
+    "impactMetric":  "Time to answer a leadership data question",
+    "feasibility":  "Medium",
+    "reusability":  "High across data-rich agencies.",
+    "ownerName":  "Alicia Gomez",
+    "ownerEmail":  "alicia.gomez@contoso.com",
+    "referenceUrl":  "https://contoso.example/refarch/nyc-nl-dashboards",
+    "repoUrl":  "https://contoso.example/repos/nyc-nl-dashboards",
+    "createdBy":  "CAF FY26 deck",
+    "createdAt":  "2026-06-20T12:00:00.000Z",
+    "modifiedBy":  "CAF FY26 deck",
+    "modifiedAt":  "2026-06-20T12:00:00.000Z"
+}

@@ -1,0 +1,21 @@
+﻿{
+    "id":  "PAT-004",
+    "name":  "Database modernization to Azure PaaS",
+    "summary":  "Migrate and modernize on-premises and legacy databases (incl. PostgreSQL/SQL) to Azure PaaS database services, accelerating both data and AI workloads. Core Cloud Adoption Factory migrate-\u0026-modernize workload.",
+    "repeatability":  "High",
+    "solutionPlay":  "Modernize Government Operations",
+    "components":  [
+                       "Azure SQL Database",
+                       "Azure Database Migration Service",
+                       "Azure Arc-enabled SQL",
+                       "Azure Data Studio"
+                   ],
+    "acceleratorIds":  [
+                           "ACC-005",
+                           "ACC-006"
+                       ],
+    "createdBy":  "Imported (FY26 CAF deck)",
+    "createdAt":  "2026-07-07T00:00:00.000Z",
+    "modifiedBy":  "Imported (FY26 CAF deck)",
+    "modifiedAt":  "2026-07-07T00:00:00.000Z"
+}

@@ -1,0 +1,23 @@
+﻿{
+    "id":  "EV-004",
+    "title":  "NWROC AI Hackathon â€” NYC (AI Solutions for Government Operational Efficiencies)",
+    "startDate":  "2026-03-10",
+    "endDate":  "2026-03-11",
+    "status":  "Closed",
+    "format":  "In-person",
+    "location":  "New York, NY",
+    "themes":  [
+                   "AI",
+                   "Copilot",
+                   "Automation"
+               ],
+    "organizers":  [
+                       "Cloud Adoption Factory \u003ccaf@contoso.com\u003e"
+                   ],
+    "registrationUrl":  "#",
+    "notes":  "Accelerated database and AI workloads in 1.5 days; showcased Microsoft full stack across Azure, Data, Apps, AI, and GitHub Copilot; opened broader Cloud + AI priorities. Scalable outcomes across NYC Buildings, Sanitation, FDNY, Health, Housing, and OMB.",
+    "createdBy":  "Imported (FY26 CAF deck)",
+    "createdAt":  "2026-07-07T00:00:00.000Z",
+    "modifiedBy":  "Imported (FY26 CAF deck)",
+    "modifiedAt":  "2026-07-07T00:00:00.000Z"
+}

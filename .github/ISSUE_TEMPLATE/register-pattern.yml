@@ -1,0 +1,33 @@
+name: Register a pattern
+description: Define a reusable solution pattern. Approver merges to publish.
+title: "[Pattern] "
+labels: ["register:pattern", "pending-approval"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Pattern name
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+    validations:
+      required: true
+  - type: dropdown
+    id: repeatability
+    attributes:
+      label: Repeatability
+      options: [High, Medium, Low]
+    validations:
+      required: true
+  - type: input
+    id: solutionPlay
+    attributes:
+      label: Solution play
+  - type: input
+    id: components
+    attributes:
+      label: Components
+      description: Comma-separated.

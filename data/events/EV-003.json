@@ -1,0 +1,21 @@
+﻿{
+    "id":  "EV-003",
+    "title":  "Smart Infrastructure Roundtable",
+    "startDate":  "2026-06-20",
+    "endDate":  "2026-06-20",
+    "status":  "Closed",
+    "format":  "Virtual",
+    "location":  "Teams",
+    "themes":  [
+                   "Data \u0026 Analytics"
+               ],
+    "organizers":  [
+                       "Dana Wu \u003cdana.wu@contoso.com\u003e"
+                   ],
+    "registrationUrl":  "#",
+    "notes":  "Executive roundtable on predictive maintenance.",
+    "createdBy":  "Seed",
+    "createdAt":  "2026-05-15T12:00:00.000Z",
+    "modifiedBy":  "Seed",
+    "modifiedAt":  "2026-05-15T12:00:00.000Z"
+}

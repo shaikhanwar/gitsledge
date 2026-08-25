@@ -1,0 +1,7 @@
+﻿{
+    "id":  "ACC-002",
+    "name":  "Streaming summarizer sample",
+    "type":  "Sample app",
+    "patternId":  "PAT-002",
+    "url":  "https://contoso.example/accelerators/stream-summarizer"
+}

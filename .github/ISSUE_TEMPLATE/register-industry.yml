@@ -1,0 +1,17 @@
+name: Register an industry
+description: Add a top-level SLED industry (taxonomy). Approver merges to publish.
+title: "[Industry] "
+labels: ["register:industry", "pending-approval"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Industry name
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+    validations:
+      required: true

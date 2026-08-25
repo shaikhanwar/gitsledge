@@ -1,0 +1,111 @@
+name: Register a use case
+description: Submit a SLED use case for review. On submit, a pull request is opened; an approver merges it to publish.
+title: "[Use case] "
+labels: ["register:usecase", "pending-approval"]
+body:
+  - type: markdown
+    attributes:
+      value: "Fill in the use case. Required fields are marked. After you submit, automation opens a pull request and an approver reviews it."
+  - type: input
+    id: title
+    attributes:
+      label: Use case title
+      placeholder: e.g. Automated Permitting Workflow with AI Agents
+    validations:
+      required: true
+  - type: dropdown
+    id: industry
+    attributes:
+      label: Industry
+      options:
+        - State & Local Government
+        - Public Safety & Justice
+        - Public Health & Social Services
+        - Transportation & Urban Infrastructure
+        - Education
+    validations:
+      required: true
+  - type: input
+    id: vertical
+    attributes:
+      label: Vertical
+      description: Must match an existing vertical name (e.g. City / Municipality).
+      placeholder: e.g. City / Municipality
+  - type: dropdown
+    id: status
+    attributes:
+      label: Status
+      options: [Draft, In Review, Published]
+    validations:
+      required: true
+  - type: textarea
+    id: businessProblem
+    attributes:
+      label: Business problem
+    validations:
+      required: true
+  - type: textarea
+    id: currentProcess
+    attributes:
+      label: Current process
+  - type: textarea
+    id: proposedSolution
+    attributes:
+      label: Proposed solution
+    validations:
+      required: true
+  - type: input
+    id: beneficiaries
+    attributes:
+      label: Beneficiaries
+  - type: input
+    id: tags
+    attributes:
+      label: Tags
+      description: Comma-separated (e.g. AI, Copilot, Automation).
+  - type: input
+    id: components
+    attributes:
+      label: Components
+      description: Comma-separated.
+  - type: input
+    id: copilotRole
+    attributes:
+      label: Copilot role
+  - type: input
+    id: services
+    attributes:
+      label: Services
+      description: Comma-separated.
+  - type: input
+    id: solutionPlay
+    attributes:
+      label: Solution play
+  - type: textarea
+    id: businessValue
+    attributes:
+      label: Business value
+  - type: input
+    id: estimatedImpact
+    attributes:
+      label: Estimated impact
+  - type: input
+    id: ownerName
+    attributes:
+      label: Owner name
+    validations:
+      required: true
+  - type: input
+    id: ownerEmail
+    attributes:
+      label: Owner email
+    validations:
+      required: true
+  - type: input
+    id: referenceUrl
+    attributes:
+      label: Reference URL
+  - type: input
+    id: repoUrl
+    attributes:
+      label: Repo URL

@@ -1,0 +1,7 @@
+﻿{
+    "id":  "ACC-005",
+    "name":  "Azure Landing Zone (ALZ) for data platforms",
+    "type":  "Solution accelerator",
+    "patternId":  "PAT-004",
+    "url":  "https://contoso.example/accelerators/alz-data"
+}

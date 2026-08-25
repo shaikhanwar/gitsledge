@@ -1,0 +1,21 @@
+﻿{
+    "id":  "PAT-003",
+    "name":  "AI-assisted legacy app modernization (GitHub Copilot)",
+    "summary":  "Modernize legacy Microsoft Access and Oracle form-based applications to Azure using AI-assisted development with GitHub Copilot; the repeatable App-in-a-Day / App-\u0026-AI-in-a-Day motion that moved NYC, Louisiana OTS and Florida from interest to execution.",
+    "repeatability":  "High",
+    "solutionPlay":  "Modernize Government Operations",
+    "components":  [
+                       "GitHub Copilot",
+                       "Azure App Service",
+                       "Azure SQL Database",
+                       "Visual Studio Code"
+                   ],
+    "acceleratorIds":  [
+                           "ACC-003",
+                           "ACC-004"
+                       ],
+    "createdBy":  "Imported (FY26 CAF deck)",
+    "createdAt":  "2026-07-07T00:00:00.000Z",
+    "modifiedBy":  "Imported (FY26 CAF deck)",
+    "modifiedAt":  "2026-07-07T00:00:00.000Z"
+}

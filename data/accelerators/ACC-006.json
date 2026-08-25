@@ -1,0 +1,7 @@
+﻿{
+    "id":  "ACC-006",
+    "name":  "Database migration assessment kit (DMA + SQL)",
+    "type":  "Documentation",
+    "patternId":  "PAT-004",
+    "url":  "https://contoso.example/accelerators/db-migration-assessment"
+}

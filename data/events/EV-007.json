@@ -1,0 +1,22 @@
+﻿{
+    "id":  "EV-007",
+    "title":  "Ohio Hackathon (Honorable Mention)",
+    "startDate":  "2026-01-21",
+    "endDate":  "2026-01-21",
+    "status":  "Closed",
+    "format":  "In-person",
+    "location":  "Columbus, OH",
+    "themes":  [
+                   "AI",
+                   "Automation"
+               ],
+    "organizers":  [
+                       "Cloud Adoption Factory \u003ccaf@contoso.com\u003e"
+                   ],
+    "registrationUrl":  "#",
+    "notes":  "FY26 honorable mention hackathon in the Cloud Adoption Factory motion.",
+    "createdBy":  "Imported (FY26 CAF deck)",
+    "createdAt":  "2026-07-07T00:00:00.000Z",
+    "modifiedBy":  "Imported (FY26 CAF deck)",
+    "modifiedAt":  "2026-07-07T00:00:00.000Z"
+}

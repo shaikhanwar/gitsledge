@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Browse the SLED Use Case Library
+    url: https://shaikhanwar.github.io/gitsledge/
+    about: View published use cases, industries, patterns and events.

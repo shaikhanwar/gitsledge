@@ -1,0 +1,11 @@
+﻿{
+    "id":  "VER-007",
+    "name":  "Public Health",
+    "industryId":  "IND-003",
+    "description":  "Population health, epidemiology, and health departments.",
+    "approvalStatus":  "Approved",
+    "createdBy":  "Seed",
+    "createdAt":  "2026-05-02T12:00:00.000Z",
+    "modifiedBy":  "Seed",
+    "modifiedAt":  "2026-05-02T12:00:00.000Z"
+}

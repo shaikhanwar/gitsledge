@@ -1,0 +1,44 @@
+﻿{
+    "id":  "UC-011",
+    "title":  "Operational Workflow Automation Across NYC Agencies",
+    "industryId":  "IND-001",
+    "verticalId":  "VER-002",
+    "status":  "Published",
+    "businessProblem":  "Procurement, inspections, identity/access, and IT workflows were manual and fragmented across many NYC agencies.",
+    "currentProcess":  "Disconnected, manual workflows handled agency-by-agency.",
+    "proposedSolution":  "Modernized and automated procurement, inspections, identity/access, and IT workflows across NYC Buildings, Sanitation, FDNY, Health, Housing, and OMB.",
+    "beneficiaries":  "NYC Buildings, Sanitation, FDNY, Health, Housing, and OMB staff",
+    "tags":  [
+                 "Automation",
+                 "AI",
+                 "Copilot"
+             ],
+    "components":  [
+                       "Power Automate",
+                       "Azure",
+                       "GitHub Copilot"
+                   ],
+    "copilotRole":  "AI-assisted workflow automation",
+    "services":  [
+                     "Power Platform",
+                     "Azure"
+                 ],
+    "solutionPlay":  "Modernize Government Operations",
+    "patternId":  "PAT-007",
+    "dataDependencies":  "Procurement, inspection, and identity/access records",
+    "compliance":  "Agency identity and access policies.",
+    "risks":  "Change management across multiple agencies.",
+    "businessValue":  "Reduced manual effort and standardized operational workflows across agencies.",
+    "estimatedImpact":  "Workflows automated across 6+ agencies",
+    "impactMetric":  "Manual workflow hours reduced",
+    "feasibility":  "High",
+    "reusability":  "Very high â€” common back-office workflows across government.",
+    "ownerName":  "Sofia Alvarez",
+    "ownerEmail":  "sofia.alvarez@contoso.com",
+    "referenceUrl":  "https://contoso.example/refarch/nyc-workflow-automation",
+    "repoUrl":  "https://contoso.example/repos/nyc-workflow-automation",
+    "createdBy":  "CAF FY26 deck",
+    "createdAt":  "2026-06-20T12:00:00.000Z",
+    "modifiedBy":  "CAF FY26 deck",
+    "modifiedAt":  "2026-06-20T12:00:00.000Z"
+}

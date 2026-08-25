@@ -1,0 +1,61 @@
+# When a "Register …" issue is submitted, turn it into a record file and open a
+# Pull Request. Merging that PR (which CODEOWNERS routes to the SLED Approvers)
+# publishes the record — that IS the approval workflow.
+name: Issue to PR
+
+on:
+  issues:
+    types: [opened, edited, labeled]
+
+# Least privilege: write repo contents + open PRs; nothing else.
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+jobs:
+  convert:
+    # Only act on issues carrying a register:* label (set by the issue template).
+    if: startsWith(join(github.event.issue.labels.*.name, ','), 'register:') || contains(join(github.event.issue.labels.*.name, ','), 'register:')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Parse issue into a record file
+        id: parse
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          ISSUE_LABELS: ${{ join(github.event.issue.labels.*.name, ',') }}
+          ISSUE_AUTHOR: ${{ github.event.issue.user.login }}
+        run: node scripts/issue-to-record.mjs
+
+      - name: Open a Pull Request with the new record
+        if: steps.parse.outputs.file != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+          FILE: ${{ steps.parse.outputs.file }}
+          ENTITY: ${{ steps.parse.outputs.entity }}
+          RECORD_ID: ${{ steps.parse.outputs.recordId }}
+          TITLE: ${{ steps.parse.outputs.title }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+        run: |
+          set -e
+          BRANCH="submission/issue-${ISSUE_NUMBER}-${RECORD_ID}"
+          git config user.name  "sled-bot"
+          git config user.email "sled-bot@users.noreply.github.com"
+          git checkout -b "$BRANCH"
+          git add "$FILE"
+          git commit -m "Add ${ENTITY} ${RECORD_ID} (from #${ISSUE_NUMBER})"
+          git push --force origin "$BRANCH"
+          PR_URL=$(gh pr create \
+            --base main --head "$BRANCH" \
+            --title "Register ${ENTITY}: ${TITLE}" \
+            --body "Automated from issue #${ISSUE_NUMBER}. Review the record file, then **merge to publish**. Approval is enforced by CODEOWNERS (SLED Approvers).\n\nCloses #${ISSUE_NUMBER}." \
+            --label "pending-approval")
+          gh issue comment "$ISSUE_NUMBER" --body "Thanks! A pull request was opened for review: ${PR_URL}. It will publish once an approver merges it."

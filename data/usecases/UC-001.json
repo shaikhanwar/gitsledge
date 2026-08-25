@@ -1,0 +1,44 @@
+﻿{
+    "id":  "UC-001",
+    "title":  "Automated Permitting Workflow with AI Agents",
+    "industryId":  "IND-001",
+    "verticalId":  "VER-002",
+    "status":  "Published",
+    "businessProblem":  "Manual permit intake and routing takes weeks and is error-prone, frustrating residents and staff.",
+    "currentProcess":  "Paper and email submissions manually triaged by clerks across multiple departments.",
+    "proposedSolution":  "An AI agent classifies permit applications, checks completeness, routes to the right department, and drafts responses.",
+    "beneficiaries":  "Residents, permit clerks, planning department",
+    "tags":  [
+                 "AI",
+                 "Copilot",
+                 "Automation"
+             ],
+    "components":  [
+                       "Azure OpenAI",
+                       "Power Automate",
+                       "Dataverse"
+                   ],
+    "copilotRole":  "Triage and drafting assistant",
+    "services":  [
+                     "Azure OpenAI",
+                     "Power Platform"
+                 ],
+    "solutionPlay":  "Modernize Government Operations",
+    "patternId":  "PAT-001",
+    "dataDependencies":  "Permit records, zoning rules",
+    "compliance":  "PII handled under state records policy; access trimmed.",
+    "risks":  "Model drift on edge-case permit types.",
+    "businessValue":  "Cuts permit processing time from weeks to days.",
+    "estimatedImpact":  "60% faster turnaround",
+    "impactMetric":  "Avg. days to decision",
+    "feasibility":  "High â€” built on existing Power Platform tenant.",
+    "reusability":  "High across municipalities.",
+    "ownerName":  "Jordan Lee",
+    "ownerEmail":  "jordan.lee@contoso.com",
+    "referenceUrl":  "https://contoso.example/refarch/permitting",
+    "repoUrl":  "#",
+    "createdBy":  "Seed",
+    "createdAt":  "2026-05-20T12:00:00.000Z",
+    "modifiedBy":  "Seed",
+    "modifiedAt":  "2026-06-10T12:00:00.000Z"
+}

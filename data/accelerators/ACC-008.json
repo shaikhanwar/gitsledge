@@ -1,0 +1,7 @@
+﻿{
+    "id":  "ACC-008",
+    "name":  "NL dashboard sample (Fabric + Copilot)",
+    "type":  "Sample app",
+    "patternId":  "PAT-006",
+    "url":  "https://contoso.example/accelerators/nl-dashboard-fabric"
+}

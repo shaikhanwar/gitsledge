@@ -1,0 +1,19 @@
+﻿{
+    "id":  "PAT-001",
+    "name":  "Document-grounded Copilot (RAG)",
+    "summary":  "Retrieval-augmented assistant over an agency\u0027s document corpus with citations and access trimming.",
+    "repeatability":  "High",
+    "solutionPlay":  "Data \u0026 AI for Public Sector",
+    "components":  [
+                       "Azure OpenAI",
+                       "Azure AI Search",
+                       "Entra ID"
+                   ],
+    "acceleratorIds":  [
+                           "ACC-001"
+                       ],
+    "createdBy":  "Seed",
+    "createdAt":  "2026-05-02T12:00:00.000Z",
+    "modifiedBy":  "Seed",
+    "modifiedAt":  "2026-05-02T12:00:00.000Z"
+}

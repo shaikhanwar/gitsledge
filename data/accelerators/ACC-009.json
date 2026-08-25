@@ -1,0 +1,7 @@
+﻿{
+    "id":  "ACC-009",
+    "name":  "Government workflow agent templates",
+    "type":  "Flow template",
+    "patternId":  "PAT-007",
+    "url":  "https://contoso.example/accelerators/gov-workflow-agents"
+}

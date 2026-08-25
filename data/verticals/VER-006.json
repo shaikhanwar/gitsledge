@@ -1,0 +1,11 @@
+﻿{
+    "id":  "VER-006",
+    "name":  "Health \u0026 Human Services",
+    "industryId":  "IND-003",
+    "description":  "Benefits, casework, and social-service delivery.",
+    "approvalStatus":  "Approved",
+    "createdBy":  "Seed",
+    "createdAt":  "2026-05-02T12:00:00.000Z",
+    "modifiedBy":  "Seed",
+    "modifiedAt":  "2026-05-02T12:00:00.000Z"
+}

@@ -1,0 +1,22 @@
+﻿{
+    "id":  "EV-006",
+    "title":  "Florida â€” App / AI in a Day",
+    "startDate":  "2026-04-08",
+    "endDate":  "2026-04-08",
+    "status":  "Closed",
+    "format":  "In-person",
+    "location":  "Tallahassee, FL",
+    "themes":  [
+                   "AI",
+                   "Copilot"
+               ],
+    "organizers":  [
+                       "Cloud Adoption Factory \u003ccaf@contoso.com\u003e"
+                   ],
+    "registrationUrl":  "#",
+    "notes":  "Combined app modernization with AI readiness; moved teams from interest to execution; demonstrated the motion can scale beyond one geography.",
+    "createdBy":  "Imported (FY26 CAF deck)",
+    "createdAt":  "2026-07-07T00:00:00.000Z",
+    "modifiedBy":  "Imported (FY26 CAF deck)",
+    "modifiedAt":  "2026-07-07T00:00:00.000Z"
+}

@@ -1,0 +1,11 @@
+﻿{
+    "id":  "VER-004",
+    "name":  "Law Enforcement",
+    "industryId":  "IND-002",
+    "description":  "Police, sheriffs, and emergency dispatch (911 / PSAP).",
+    "approvalStatus":  "Approved",
+    "createdBy":  "Seed",
+    "createdAt":  "2026-05-02T12:00:00.000Z",
+    "modifiedBy":  "Seed",
+    "modifiedAt":  "2026-05-02T12:00:00.000Z"
+}

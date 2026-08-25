@@ -1,0 +1,20 @@
+﻿{
+    "id":  "PAT-005",
+    "name":  "Constituent virtual assistant (chatbot + voice)",
+    "summary":  "Public chatbots, voice assistants and guidance tools that reduce call volume and improve service delivery for residents and frontline staff, grounded on agency content. Proven in the NYC AI Hackathon scalable outcomes.",
+    "repeatability":  "High",
+    "solutionPlay":  "Citizen \u0026 Constituent Engagement",
+    "components":  [
+                       "Azure AI Foundry",
+                       "Azure OpenAI",
+                       "Azure AI Bot Service",
+                       "Azure AI Speech"
+                   ],
+    "acceleratorIds":  [
+                           "ACC-007"
+                       ],
+    "createdBy":  "Imported (FY26 CAF deck)",
+    "createdAt":  "2026-07-07T00:00:00.000Z",
+    "modifiedBy":  "Imported (FY26 CAF deck)",
+    "modifiedAt":  "2026-07-07T00:00:00.000Z"
+}

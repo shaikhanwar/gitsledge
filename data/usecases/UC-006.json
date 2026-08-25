@@ -1,0 +1,43 @@
+﻿{
+    "id":  "UC-006",
+    "title":  "Constituent Service Chatbot",
+    "industryId":  "IND-001",
+    "verticalId":  "VER-001",
+    "status":  "Draft",
+    "businessProblem":  "Call centers are overwhelmed with routine status and how-to questions.",
+    "currentProcess":  "Phone and email handled by limited call-center staff.",
+    "proposedSolution":  "A multilingual chatbot answers common questions and hands off complex cases to staff.",
+    "beneficiaries":  "Residents, call-center staff",
+    "tags":  [
+                 "AI",
+                 "Citizen Experience",
+                 "Accessibility"
+             ],
+    "components":  [
+                       "Azure AI Bot Service",
+                       "Azure OpenAI"
+                   ],
+    "copilotRole":  "Self-service assistant",
+    "services":  [
+                     "Azure Bot Service",
+                     "Azure OpenAI"
+                 ],
+    "solutionPlay":  "Citizen \u0026 Constituent Engagement",
+    "patternId":  "PAT-001",
+    "dataDependencies":  "FAQ and service catalog",
+    "compliance":  "Accessible (WCAG); no PII stored.",
+    "risks":  "Coverage gaps for niche questions.",
+    "businessValue":  "Deflects routine calls, frees staff for complex cases.",
+    "estimatedImpact":  "Call deflection",
+    "impactMetric":  "% calls deflected",
+    "feasibility":  "High",
+    "reusability":  "Very high across agencies.",
+    "ownerName":  "",
+    "ownerEmail":  "",
+    "referenceUrl":  "#",
+    "repoUrl":  "#",
+    "createdBy":  "Seed",
+    "createdAt":  "2026-06-01T12:00:00.000Z",
+    "modifiedBy":  "Seed",
+    "modifiedAt":  "2026-06-15T12:00:00.000Z"
+}

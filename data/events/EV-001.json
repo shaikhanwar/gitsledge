@@ -1,0 +1,22 @@
+﻿{
+    "id":  "EV-001",
+    "title":  "SLED AI Innovation Day â€” West",
+    "startDate":  "2026-07-15",
+    "endDate":  "2026-07-15",
+    "status":  "Open for registration",
+    "format":  "In-person",
+    "location":  "Sacramento, CA",
+    "themes":  [
+                   "AI",
+                   "Citizen Experience"
+               ],
+    "organizers":  [
+                       "Jordan Lee \u003cjordan.lee@contoso.com\u003e"
+                   ],
+    "registrationUrl":  "https://contoso.example/events/sled-ai-west",
+    "notes":  "Hands-on workshops across the five SLED verticals.",
+    "createdBy":  "Seed",
+    "createdAt":  "2026-05-10T12:00:00.000Z",
+    "modifiedBy":  "Seed",
+    "modifiedAt":  "2026-05-10T12:00:00.000Z"
+}

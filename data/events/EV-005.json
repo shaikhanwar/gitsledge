@@ -1,0 +1,22 @@
+﻿{
+    "id":  "EV-005",
+    "title":  "Louisiana OTS â€” App-in-a-Day",
+    "startDate":  "2026-02-18",
+    "endDate":  "2026-02-18",
+    "status":  "Closed",
+    "format":  "In-person",
+    "location":  "Baton Rouge, LA",
+    "themes":  [
+                   "Copilot",
+                   "Cloud Migration"
+               ],
+    "organizers":  [
+                       "Cloud Adoption Factory \u003ccaf@contoso.com\u003e"
+                   ],
+    "registrationUrl":  "#",
+    "notes":  "Moved LA OTS from exploration to active Azure evaluation; validated Azure app-dev/DB and GitHub Copilot through hands-on scenarios; reopened the platform decision and positioned Azure in the AWS bake-off.",
+    "createdBy":  "Imported (FY26 CAF deck)",
+    "createdAt":  "2026-07-07T00:00:00.000Z",
+    "modifiedBy":  "Imported (FY26 CAF deck)",
+    "modifiedAt":  "2026-07-07T00:00:00.000Z"
+}

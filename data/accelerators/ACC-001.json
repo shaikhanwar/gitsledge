@@ -1,0 +1,7 @@
+﻿{
+    "id":  "ACC-001",
+    "name":  "RAG starter (Bicep + app)",
+    "type":  "Repo template",
+    "patternId":  "PAT-001",
+    "url":  "https://contoso.example/accelerators/rag-starter"
+}

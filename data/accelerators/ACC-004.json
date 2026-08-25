@@ -1,0 +1,7 @@
+﻿{
+    "id":  "ACC-004",
+    "name":  "GitHub Copilot app-modernization playbook",
+    "type":  "Repo template",
+    "patternId":  "PAT-003",
+    "url":  "https://contoso.example/accelerators/copilot-appmod-playbook"
+}

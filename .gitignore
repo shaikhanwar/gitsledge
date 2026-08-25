@@ -1,0 +1,11 @@
+# build output — the data bundles are generated from data/**; keep source only.
+# (Committing site/data is optional; CI regenerates it. Keep it out to avoid drift.)
+site/data/
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.log
+
+# node (only used by CI; no local node_modules expected)
+node_modules/

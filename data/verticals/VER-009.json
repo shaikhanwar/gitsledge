@@ -1,0 +1,11 @@
+﻿{
+    "id":  "VER-009",
+    "name":  "Smart Infrastructure",
+    "industryId":  "IND-004",
+    "description":  "Roads, utilities, and smart-city infrastructure.",
+    "approvalStatus":  "Approved",
+    "createdBy":  "Seed",
+    "createdAt":  "2026-05-02T12:00:00.000Z",
+    "modifiedBy":  "Seed",
+    "modifiedAt":  "2026-05-02T12:00:00.000Z"
+}

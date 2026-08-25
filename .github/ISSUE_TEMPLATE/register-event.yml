@@ -1,0 +1,57 @@
+name: Add an event
+description: Track a SLED event (standalone). Events publish on merge (no separate approval envelope).
+title: "[Event] "
+labels: ["register:event", "pending-approval"]
+body:
+  - type: input
+    id: title
+    attributes:
+      label: Event title
+    validations:
+      required: true
+  - type: input
+    id: startDate
+    attributes:
+      label: Start date
+      placeholder: YYYY-MM-DD
+    validations:
+      required: true
+  - type: input
+    id: endDate
+    attributes:
+      label: End date
+      placeholder: YYYY-MM-DD
+  - type: dropdown
+    id: status
+    attributes:
+      label: Status
+      options: [Proposed, Confirmed, Open for registration, Closed]
+    validations:
+      required: true
+  - type: dropdown
+    id: format
+    attributes:
+      label: Format
+      options: [In-person, Virtual, Hybrid]
+  - type: input
+    id: location
+    attributes:
+      label: Location
+  - type: input
+    id: themes
+    attributes:
+      label: Themes
+      description: Comma-separated.
+  - type: input
+    id: organizers
+    attributes:
+      label: Organizers
+      description: Comma-separated (Name <email>).
+  - type: input
+    id: registrationUrl
+    attributes:
+      label: Registration URL
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
