@@ -47,8 +47,18 @@
     <span>SLED Use Case Library — internal Microsoft catalog of reusable SLED use cases. Prototype · <a href="#/about" style="color:inherit;text-decoration:underline">About</a></span>
   </footer>
 
-  <!-- GitHub build config: enables "Register" actions to open the matching Issue Form. -->
-  <script>window.SLED_GITHUB = { repo: 'shaikhanwar/gitsledge' };</script>
+  <!-- GitHub build config.
+       repo       : owner/name (enables "Register" -> GitHub Issue Forms).
+       clientId   : GitHub OAuth App client id (enables the IN-APP register path).
+       authProxy  : URL of the tiny token-exchange helper (Worker/Function).
+       Leave clientId/authProxy blank to keep the (working) Issue Form flow.
+       When BOTH are set, Register happens inside the app after a one-time sign-in. -->
+  <script>window.SLED_GITHUB = {
+    repo: 'shaikhanwar/gitsledge',
+    clientId: '',                 // e.g. 'Iv1.abc123...'
+    authProxy: '',                // e.g. 'https://sled-auth.<you>.workers.dev/token'
+    scope: 'public_repo'          // use 'repo' if the repo is private
+  };</script>
   <script type="module" src="js/app.js"></script>
 </body>
 </html>

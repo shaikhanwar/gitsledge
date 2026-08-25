@@ -22,6 +22,9 @@ import {
   APPROVAL_STATUS, STATUSES, TAGS, REPEATABILITY,
   ACCELERATOR_TYPES, EVENT_STATUS, EVENT_FORMAT, STATUS_CLASS
 } from './constants.js';
+import {
+  ghConfigured, ghSignedIn, ghSignIn, ghSignOut, ghHandleRedirect, ghSubmit, ghNextId, ghCurrentUser
+} from './github.js';
 
 const app = document.getElementById('app');
 
@@ -1065,6 +1068,7 @@ function pageRegisterUseCase() {
     e.preventDefault();
     if (!val(form, 'industryId')) { toast('Please select an industry.'); return; }
     const uc = buildUseCase(readUseCase(form, {}));
+    if (ghRegister('usecase', uc, '#/usecases', db.useCases.map(x => x.id), 'UC')) return;
     stampCreate(uc, 'Use case');
     const state = applyApproval(uc, 'Use case', { isNew: true });
     db.useCases.push(uc); reindex(); persistSoon();
@@ -1110,6 +1114,7 @@ function pageRegisterIndustry() {
     e.preventDefault();
     if (!val(form, 'name')) { toast('Name is required.'); return; }
     const ind = buildIndustry(readIndustry(form, {}));
+    if (ghRegister('industry', ind, '#/industries', db.industries.map(x => x.id), 'IND')) return;
     stampCreate(ind, 'Industry');
     const state = applyApproval(ind, 'Industry', { isNew: true });
     db.industries.push(ind); reindex(); persistSoon();
@@ -1161,6 +1166,7 @@ function pageRegisterVertical(preIndustryId) {
     if (!val(form, 'name')) { toast('Name is required.'); return; }
     if (!val(form, 'industryId')) { toast('Please select an industry.'); return; }
     const v = buildVertical(readVertical(form, {}));
+    if (ghRegister('vertical', v, '#/industries', db.verticals.map(x => x.id), 'VER')) return;
     stampCreate(v, 'Vertical');
     const state = applyApproval(v, 'Vertical', { isNew: true });
     db.verticals.push(v); reindex(); persistSoon();
@@ -1206,6 +1212,7 @@ function pageRegisterSolutionPlay() {
     e.preventDefault();
     if (!val(form, 'name')) { toast('Name is required.'); return; }
     const s = buildSolutionPlay(readSolutionPlay(form, {}));
+    if (ghRegister('solutionplay', s, '#/solutionplays', db.solutionPlays.map(x => x.id), 'PLAY')) return;
     stampCreate(s, 'Solution play');
     const state = applyApproval(s, 'Solution play', { isNew: true });
     db.solutionPlays.push(s); reindex(); persistSoon();
@@ -1268,6 +1275,7 @@ function pageRegisterEvent() {
     e.preventDefault();
     if (!val(form, 'title')) { toast('Title is required.'); return; }
     const ev = buildEvent(readEvent(form, {}));
+    if (ghRegister('event', ev, '#/events', db.events.map(x => x.id), 'EV')) return;
     stampCreate(ev, 'Event'); db.events.push(ev); reindex(); persistSoon();
     toast(`Event added. ${savedNote()}`); location.hash = '#/events';
   });
@@ -1322,6 +1330,7 @@ function pageRegisterPattern() {
     const form = e.target;
     if (!val(form, 'name')) { toast('Name is required.'); return; }
     const p = buildPattern(readPattern(form, {}));
+    if (ghRegister('pattern', p, '#/patterns', db.patterns.map(x => x.id), 'PAT')) return;
     stampCreate(p, 'Pattern');
     const state = applyApproval(p, 'Pattern', { isNew: true });
     db.patterns.push(p); reindex(); persistSoon();
@@ -1432,6 +1441,24 @@ const REGISTER_TEMPLATES = {
 };
 let lastView = '#/home';
 
+// Option B (in-app write): assign a clean id, open a PR via the GitHub API, then
+// toast + navigate. If not signed in yet, kick off the one-time GitHub sign-in.
+// Returns true when it handled the submit (so callers skip the local path).
+function ghRegister(entityKey, record, listHash, existingIds, prefix) {
+  if (!ghConfigured()) return false;
+  if (!ghSignedIn()) {
+    toast('Sign in with GitHub to submit for review…');
+    setTimeout(() => ghSignIn(location.hash), 400);
+    return true;
+  }
+  record.id = ghNextId(existingIds, prefix);
+  toast('Submitting to GitHub…');
+  ghSubmit(entityKey, record)
+    .then(() => { toast('Submitted for review. A pull request was opened.'); location.hash = listHash; })
+    .catch(err => { toast('Submit failed: ' + err.message); console.error(err); });
+  return true;
+}
+
 function route() {
   const hash = location.hash || '#/home';
   const parts = hash.replace(/^#\//, '').split('/');
@@ -1439,7 +1466,9 @@ function route() {
   const sub = parts[1] || '';
   const id = parts.slice(1).join('/');
   // Intercept register/<entity> -> open the GitHub Issue Form in a new tab.
-  if (GITHUB_REPO && base === 'register' && sub && REGISTER_TEMPLATES[sub]) {
+  // Skipped when the in-app write path (OAuth) is configured; then we render the
+  // branded form instead and submit via the API (see ghRegister).
+  if (GITHUB_REPO && !ghConfigured() && base === 'register' && sub && REGISTER_TEMPLATES[sub]) {
     window.open(`https://github.com/${GITHUB_REPO}/issues/new?template=${REGISTER_TEMPLATES[sub]}`, '_blank', 'noopener');
     closeRegisterMenu();
     if (location.hash !== lastView) location.hash = lastView; else mount((ROUTES[lastView.replace(/^#\//, '').split('/')[0]] || pageHome)());
@@ -1471,10 +1500,30 @@ function wireChrome() {
   const toggle = document.getElementById('registerToggle');
   if (toggle) toggle.addEventListener('click', (e) => { e.stopPropagation(); menu.classList.toggle('open'); });
   document.addEventListener('click', (e) => { if (menu && !menu.contains(e.target)) menu.classList.remove('open'); });
+
+  // GitHub sign-in control (Option B: in-app register writes via the API).
+  const nav = document.getElementById('mainnav');
+  if (ghConfigured() && nav && !document.getElementById('ghAuthBtn')) {
+    const b = document.createElement('button');
+    b.id = 'ghAuthBtn';
+    b.className = 'nav-cta';
+    b.style.marginLeft = '6px';
+    nav.appendChild(b);
+    b.addEventListener('click', () => {
+      if (ghSignedIn()) { ghSignOut(); applyChrome(); toast('Signed out of GitHub.'); }
+      else ghSignIn(location.hash);
+    });
+  }
 }
 
 // Show/hide the Register menu items + Approvals tab to match the user's role.
 function applyChrome() {
+  // GitHub sign-in button label (Option B).
+  const authBtn = document.getElementById('ghAuthBtn');
+  if (authBtn) {
+    authBtn.textContent = ghSignedIn() ? 'GitHub \u2713 signed in' : 'Sign in with GitHub';
+    authBtn.title = ghSignedIn() ? 'Signed in - click to sign out' : 'Sign in to register inside the app';
+  }
   // Approvals nav tab: only Owners/Approvers, with a live pending count badge.
   const approvals = document.querySelector('#mainnav a[data-route="approvals"]');
   if (approvals) {
@@ -1532,7 +1581,8 @@ function renderModeBar() {
 
 // ---- Boot -----------------------------------------------------------------
 window.addEventListener('hashchange', route);
-loadData()
+ghHandleRedirect()
+  .then(() => loadData())
   .then(() => loadIdentity())
   .then(() => {
     wireChrome();

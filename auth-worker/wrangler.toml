@@ -1,0 +1,11 @@
+name = "sled-auth"
+main = "worker.js"
+compatibility_date = "2024-11-01"
+
+# Your GitHub Pages origin (no trailing path). Lock the token endpoint to it.
+[vars]
+ALLOWED_ORIGIN = "https://shaikhanwar.github.io"
+
+# Secrets are NOT stored here. Set them once after deploy:
+#   wrangler secret put GITHUB_CLIENT_ID
+#   wrangler secret put GITHUB_CLIENT_SECRET
