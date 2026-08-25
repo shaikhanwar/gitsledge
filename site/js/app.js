@@ -1375,47 +1375,26 @@ function openEditPattern(id) {
 // ---- Approvals (Owners/Approvers review Contributor submissions) ----------
 function pageApprovals() {
   if (!canApprove()) return permDenied('review approvals');
-  const items = pendingItems();
+  const repo = (typeof window !== 'undefined' && window.SLED_GITHUB && window.SLED_GITHUB.repo) || '';
   const node = el(`<div>
-    <div class="page-head"><h1>Approvals</h1><p>Review content submitted by contributors. Approve to publish it to the catalog, or reject with a reason.</p></div>
-    <div id="apprList"></div></div>`);
+    <div class="page-head"><h1>Approvals</h1><p>Open submissions awaiting review. Approving publishes the item &mdash; done by <strong>merging the pull request</strong> on GitHub.</p></div>
+    <div id="apprList"><div class="card"><span class="dim">Loading pending submissions&hellip;</span></div></div></div>`);
   const listBox = node.querySelector('#apprList');
-  if (!items.length) { listBox.appendChild(el('<div class="card"><span class="dim">Nothing awaiting approval. You’re all caught up.</span></div>')); return node; }
-  const detailHref = (type, rec) => type === 'Use case' ? `#/usecase/${rec.id}`
-    : type === 'Industry' ? `#/industry/${rec.id}`
-    : type === 'Pattern' ? `#/pattern/${rec.id}`
-    : type === 'Accelerator' ? `#/pattern/${rec.patternId}`
-    : type === 'Solution play' ? `#/register/solutionplay`
-    : `#/industry/${rec.industryId}`;
-  items.forEach(({ rec, type }) => {
-    const sub = `${esc(rec.submittedBy || rec.createdBy || '—')}${rec.submittedAt ? ' · ' + fmtDate(String(rec.submittedAt).slice(0, 10)) : ''}`;
-    const meta = type === 'Use case'
-      ? `${esc(industryName(rec.industryId))}${rec.verticalId ? ' · ' + esc(verticalName(rec.verticalId)) : ''}`
-      : type === 'Vertical' ? `${esc(industryName(rec.industryId))}`
-      : type === 'Pattern' ? `${esc(rec.repeatability || '')} repeatability`
-      : type === 'Accelerator' ? `${esc(rec.type || '')} · ${esc(patternName(rec.patternId))}`
-      : type === 'Solution play' ? 'Solution play'
-      : 'Industry';
-    const card = el(`<div class="card" style="margin-bottom:12px">
-      <div class="spread"><div><span class="chip info">${esc(type)}</span> <strong>${esc(rec.name || rec.title)}</strong>
-        <div class="tiny dim">${meta}</div></div>
-        <div class="tiny dim">Submitted by ${sub}</div></div>
-      <p class="tiny muted" style="margin:8px 0">${esc(rec.description || rec.businessProblem || '')}</p>
-      <div class="record-actions">
-        <a class="btn tiny ghost" href="${detailHref(type, rec)}">View</a>
-        <button class="btn tiny primary" data-approve>Approve</button>
-        <button class="btn tiny danger" data-reject>Reject</button>
-      </div></div>`);
-    card.querySelector('[data-approve]').addEventListener('click', () => {
-      approveRecord(rec, type); reindex(); persistSoon(); toast(`Approved. ${savedNote()}`); route();
-    });
-    card.querySelector('[data-reject]').addEventListener('click', () => {
-      const note = prompt('Reason for rejection (optional):', '');
-      if (note === null) return;
-      rejectRecord(rec, type, note.trim()); reindex(); persistSoon(); toast('Rejected.'); route();
-    });
-    listBox.appendChild(card);
-  });
+  if (!repo) { listBox.innerHTML = '<div class="card"><span class="dim">Not configured.</span></div>'; return node; }
+  fetch(`https://api.github.com/repos/${repo}/pulls?state=open&per_page=100`, { headers: { 'Accept': 'application/vnd.github+json' } })
+    .then(r => r.ok ? r.json() : [])
+    .then(prs => {
+      listBox.innerHTML = '';
+      if (!prs.length) { listBox.appendChild(el('<div class="card"><span class="dim">Nothing awaiting approval. You\u2019re all caught up.</span></div>')); return; }
+      prs.forEach(pr => {
+        const card = el(`<div class="card" style="margin-bottom:12px">
+          <div class="spread"><div><span class="chip info">PR #${pr.number}</span> <strong>${esc(pr.title)}</strong>
+            <div class="tiny dim">by ${esc((pr.user && pr.user.login) || '\u2014')} \u00b7 ${fmtDate(String(pr.created_at).slice(0, 10))}</div></div></div>
+          <div class="record-actions"><a class="btn tiny primary" href="${esc(pr.html_url)}" target="_blank" rel="noopener">Review &amp; merge on GitHub \u2197</a></div></div>`);
+        listBox.appendChild(card);
+      });
+    })
+    .catch(() => { listBox.innerHTML = '<div class="card"><span class="dim">Could not load pull requests.</span></div>'; });
   return node;
 }
 
@@ -1555,28 +1534,8 @@ function applyChrome() {
 
 // Mode bar (between header and main)
 function renderModeBar() {
+  // GitHub-hosted build: no demo/status bar (clean, production-like chrome).
   document.getElementById('modeBar')?.remove();
-  // On SharePoint the native suite bar already provides search + sign-in + identity,
-  // so we show no status bar at all. A banner only appears if a save fails (see showSaveError).
-  if (isSharePointMode()) return;
-  const who = identity();
-  const roleSwitcher = isLocalMode()
-    ? `<label class="role-switch tiny">Preview as
-        <select id="demoRole">${ROLES.map(r =>
-          `<option value="${r}"${role() === r ? ' selected' : ''}>${r[0].toUpperCase() + r.slice(1)}</option>`).join('')}</select></label>`
-    : '';
-  const bar = el(`<div id="modeBar" class="csvbar">
-    <span class="csvbar-tag">Demo</span>
-    <span class="csvbar-status">Local demo — edits are saved in <code>this browser</code> only.</span>
-    <span class="csvbar-identity tiny">👤 ${esc(who.name)} · <strong>${esc(roleLabel())}</strong></span>
-    <span class="csvbar-actions">${roleSwitcher} <button class="btn tiny danger" id="resetDemo">Reset demo data</button></span>
-  </div>`);
-  document.querySelector('.topbar').after(bar);
-  bar.querySelector('#demoRole')?.addEventListener('change', (e) => { setDemoRole(e.target.value); location.reload(); });
-  bar.querySelector('#resetDemo')?.addEventListener('click', () => {
-    if (!confirm('Reset to the seeded demo data? Your local edits will be cleared.')) return;
-    resetDemo(); location.reload();
-  });
 }
 
 // ---- Boot -----------------------------------------------------------------

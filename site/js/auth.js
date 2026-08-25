@@ -51,10 +51,12 @@ function param(name) {
 }
 
 // ---- Demo role -----------------------------------------------------------
+// GitHub-hosted: roles are not a real security boundary (the repo permissions +
+// PR merge are). Everyone loads as curator so all catalog features are visible;
+// ?role= can still force a role for previewing.
 function readDemoRole() {
   const forced = (param('role') || '').toLowerCase();
-  if (ROLES.includes(forced)) { try { localStorage.setItem(DEMO_ROLE_KEY, forced); } catch {} return forced; }
-  try { const saved = localStorage.getItem(DEMO_ROLE_KEY); if (ROLES.includes(saved)) return saved; } catch {}
+  if (ROLES.includes(forced)) return forced;
   return 'curator';
 }
 export function setDemoRole(r) {
