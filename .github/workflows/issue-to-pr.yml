@@ -5,7 +5,7 @@ name: Issue to PR
 
 on:
   issues:
-    types: [opened, edited, labeled]
+    types: [opened, reopened]
 
 # Least privilege: write repo contents + open PRs; nothing else.
 permissions:
@@ -15,8 +15,6 @@ permissions:
 
 jobs:
   convert:
-    # Only act on issues carrying a register:* label (set by the issue template).
-    if: startsWith(join(github.event.issue.labels.*.name, ','), 'register:') || contains(join(github.event.issue.labels.*.name, ','), 'register:')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -30,8 +28,8 @@ jobs:
         id: parse
         env:
           ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_TITLE: ${{ github.event.issue.title }}
           ISSUE_NUMBER: ${{ github.event.issue.number }}
-          ISSUE_LABELS: ${{ join(github.event.issue.labels.*.name, ',') }}
           ISSUE_AUTHOR: ${{ github.event.issue.user.login }}
         run: node scripts/issue-to-record.mjs
 
@@ -56,6 +54,5 @@ jobs:
           PR_URL=$(gh pr create \
             --base main --head "$BRANCH" \
             --title "Register ${ENTITY}: ${TITLE}" \
-            --body "Automated from issue #${ISSUE_NUMBER}. Review the record file, then **merge to publish**. Approval is enforced by CODEOWNERS (SLED Approvers).\n\nCloses #${ISSUE_NUMBER}." \
-            --label "pending-approval")
+            --body "Automated from issue #${ISSUE_NUMBER}. Review the record file, then merge to publish (approval enforced by CODEOWNERS). Closes #${ISSUE_NUMBER}.")
           gh issue comment "$ISSUE_NUMBER" --body "Thanks! A pull request was opened for review: ${PR_URL}. It will publish once an approver merges it."

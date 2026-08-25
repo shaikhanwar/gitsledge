@@ -96,9 +96,33 @@ const ENTITIES = {
 
 function fail(msg) { console.error('issue-to-record:', msg); process.exit(0); } // exit 0 => no PR
 
-const entityKey = (labels.find(l => l.startsWith('register:')) || '').split(':')[1];
+// Determine the entity robustly: primarily from a signature field in the form
+// (survives title/label edits), then fall back to a register:* label or the
+// [Prefix] in the title. No repo labels required.
+const title = process.env.ISSUE_TITLE || '';
+const form = parseForm(body);
+const entityKey = detectEntity(form, labels, title);
 const spec = ENTITIES[entityKey];
-if (!spec) fail(`no register:<entity> label found (labels: ${labels.join(', ')})`);
+if (!spec) fail(`could not determine entity (title="${title}", labels="${labels.join(',')}")`);
+
+function detectEntity(f, lbls, ttl) {
+  if ('Use case title' in f) return 'usecase';
+  if ('Vertical name' in f) return 'vertical';   // check before industry (vertical form also has 'Industry')
+  if ('Industry name' in f) return 'industry';
+  if ('Solution play name' in f) return 'solutionplay';
+  if ('Pattern name' in f) return 'pattern';
+  if ('Event title' in f) return 'event';
+  const lbl = (lbls.find(l => l.startsWith('register:')) || '').split(':')[1];
+  if (lbl && ENTITIES[lbl]) return lbl;
+  const t = String(ttl).toLowerCase();
+  if (t.startsWith('[use case]')) return 'usecase';
+  if (t.startsWith('[vertical]')) return 'vertical';
+  if (t.startsWith('[industry]')) return 'industry';
+  if (t.startsWith('[solution play]')) return 'solutionplay';
+  if (t.startsWith('[pattern]')) return 'pattern';
+  if (t.startsWith('[event]')) return 'event';
+  return '';
+}
 
 // Parse "### Label\n\nvalue" blocks from the Issue Form body.
 function parseForm(text) {
@@ -136,7 +160,6 @@ function nextId(folder, prefix) {
   return `${prefix}-${String(max + 1).padStart(3, '0')}`;
 }
 
-const form = parseForm(body);
 const rec = {};
 for (const [label, def] of Object.entries(spec.fields)) {
   const raw = form[label];

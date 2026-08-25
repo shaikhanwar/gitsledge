@@ -55,9 +55,9 @@
        When BOTH are set, Register happens inside the app after a one-time sign-in. -->
   <script>window.SLED_GITHUB = {
     repo: 'shaikhanwar/gitsledge',
-    clientId: '',                 // e.g. 'Iv1.abc123...'
-    authProxy: '',                // e.g. 'https://sled-auth.<you>.workers.dev/token'
-    scope: 'public_repo'          // use 'repo' if the repo is private
+    clientId: '',                 // (optional) in-app register needs a token relay; left off
+    authProxy: '',                // (optional) worker/function URL; left off = GitHub Issue Forms
+    scope: 'public_repo'
   };</script>
   <script type="module" src="js/app.js"></script>
 </body>
