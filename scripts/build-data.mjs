@@ -33,7 +33,7 @@ function readRecords(folder) {
   if (!existsSync(dir)) return [];
   return readdirSync(dir)
     .filter(f => f.endsWith('.json'))
-    .map(f => JSON.parse(readFileSync(join(dir, f), 'utf8')))
+    .map(f => JSON.parse(readFileSync(join(dir, f), 'utf8').replace(/^\uFEFF/, ''))) // strip UTF-8 BOM
     .sort((a, b) => String(a.id).localeCompare(String(b.id)));
 }
 

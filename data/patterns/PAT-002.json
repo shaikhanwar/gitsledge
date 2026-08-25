@@ -1,4 +1,4 @@
-﻿{
+{
     "id":  "PAT-002",
     "name":  "Real-time event summarization",
     "summary":  "Stream transcription and summarization of live audio/text with structured output for downstream systems.",

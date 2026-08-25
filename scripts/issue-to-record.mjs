@@ -118,7 +118,7 @@ function lookupIdByName(folder, name) {
   const dir = join('data', folder);
   if (!existsSync(dir) || !name) return '';
   for (const f of readdirSync(dir).filter(f => f.endsWith('.json'))) {
-    const rec = JSON.parse(readFileSync(join(dir, f), 'utf8'));
+    const rec = JSON.parse(readFileSync(join(dir, f), 'utf8').replace(/^\uFEFF/, ''));
     if (String(rec.name).toLowerCase() === name.toLowerCase()) return rec.id;
   }
   return '';

@@ -1,4 +1,4 @@
-﻿{
+{
     "id":  "PAT-001",
     "name":  "Document-grounded Copilot (RAG)",
     "summary":  "Retrieval-augmented assistant over an agency\u0027s document corpus with citations and access trimming.",
